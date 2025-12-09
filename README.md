@@ -15,7 +15,7 @@ This repository contains the implementation and data processing pipeline for foo
 
 ## Prerequisites
 
-- MATLAB (for initial data processing)
+- MATLAB R2022b (for initial data processing)
 - Python 3.9.13
 - Required Python packages (see requirements.txt):
   - numpy>=1.21.0
