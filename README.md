@@ -64,7 +64,7 @@ The `specmeaker.py` script performs the following operations:
 ## Dataset Pre-processing Steps
 
 ### Step 1: Dataset Creation
-1. Open MATLAB and navigate to the `NewDatasetCreation2.m` file
+1. Open MATLAB and navigate to the `DatasetCreation.m` file
 2. Modify the `persons` array to match your dataset (default is set for A1 dataset)
 3. Run the `DatasetCreation.m` file
 4. When prompted, select the folder containing the dataset files (P1, P2, etc.)
