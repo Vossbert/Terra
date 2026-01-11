@@ -67,7 +67,7 @@ for j = 1:length(persons)
         end
     end
 
-    dataset_original = [dataset_original, data];
+    dataset_original = [dataset_original; data];
 
     % Save combined data in root folder, not person folder
     geo_data = data;
