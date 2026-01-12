@@ -45,15 +45,15 @@ This repository contains the implementation and data processing pipeline for foo
 ### 3. Spectrogram Generation
 To use `specmeaker.py`, please create a virtual environment and install the dependencies there:
 
-For Windows
-python -m venv .venv
-.venv\Scripts\activate
-pip install -r requirements.txt
+- For Windows
+  - python -m venv .venv
+  - .venv\Scripts\activate
+  - pip install -r requirements.txt
 
-For macOS / Linux
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
+- For macOS / Linux
+  - python3 -m venv .venv
+  - source .venv/bin/activate
+  - pip install -r requirements.txt
 
 The `specmeaker.py` script performs the following operations:
 
