@@ -3,6 +3,9 @@ function [ clust, cov_mat, mu_mat, phi] = GMM_EM( signal_param, clusters)
 
 %% ---------- Parameter Intilization ------------------
 
+% Set random seed for reproducibility
+rng(42);
+
 [row col] = size(signal_param);
 num_clusters = clusters;
 rand_idx = randperm(row,num_clusters);
