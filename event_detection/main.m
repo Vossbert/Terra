@@ -3,8 +3,8 @@ clc , close all,  clear ;
 
 
 
-% load( 1 file 
-load("C:\Users\chand\Downloads\Data_Recording\P1_all.mat");
+% load the persons file you want to use as a reference for event extraction. 
+load("...\P1_all.mat");
 
 
 Fs = 8000;
@@ -24,7 +24,7 @@ ylabel('Aplitude(V)')
 
 
 tau = 1.2;
-window = 0.35; % 35ms is taken as the window size
+window = 0.375; % 375ms is taken as the window size
 wndw_ovrlap = 0.40; % 40% overlap window
 wndw_smpl = window*Fs;
 
@@ -98,7 +98,7 @@ end
 
 %% Testing on the blind dataset
 
-
+% THIS NEEDS TO BE ADJUSTED, BASED ON THE USED DATASET.
 persons = {'P1','P2','P3','P4','P5'};
 
 
@@ -182,3 +182,8 @@ person_feat{k} = footstep_feat;
 
 
 end
+
+% Automatically save person_feat to a .mat file
+
+dataname = 'person_feat.mat';
+save(fullfile(pwd, dataname), 'person_feat');
