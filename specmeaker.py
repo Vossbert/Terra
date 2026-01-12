@@ -77,7 +77,7 @@ def generate_cwt_images(file_path, output_path, footsteps_num=1, scales=np.arang
     dataset = scipy.io.loadmat(file_path)
     footstep_dataset = dataset['footstep_feat']
     features = footstep_dataset[:, :-1]         # All columns except last = features
-    labels = footstep_dataset[:, -1] - 1        # Last column = labels (0-indexed)
+    labels = footstep_dataset[:, -1]            # Last column = labels (1-indexed)
 
     # === Concatenate footsteps ===
     data = footstep_concatenation(features, labels, footsteps_num)
