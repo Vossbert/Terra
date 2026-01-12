@@ -43,6 +43,18 @@ This repository contains the implementation and data processing pipeline for foo
   - Clustering results
 
 ### 3. Spectrogram Generation
+To use `specmeaker.py`, please create a virtual environment and install the dependencies there:
+
+For Windows
+python -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt
+
+For macOS / Linux
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+
 The `specmeaker.py` script performs the following operations:
 
 #### Data Loading and Preprocessing
@@ -65,7 +77,7 @@ The `specmeaker.py` script performs the following operations:
 
 ### Step 1: Dataset Creation
 1. Open MATLAB and navigate to the `DatasetCreation.m` file
-2. Modify the `persons` array to match your dataset (default is set for A1 dataset)
+2. Uncomment the `persons` array to you want to use (line 9 - 41).
 3. Run the `DatasetCreation.m` file
 4. When prompted, select the folder containing the dataset files (P1, P2, etc.)
 5. The script will:
@@ -74,31 +86,29 @@ The `specmeaker.py` script performs the following operations:
    - Continue this process for all persons in the array
 
 ### Step 2: Event Detection and Feature Extraction
-1. Open the `USLEET.m` file in MATLAB
+1. Open the `main.m` file in MATLAB
 2. Ensure all dependent files are in the same directory:
    - Event_Extract.m
    - GMM_EM.m
    - Other required function files
-3. Select one person's file (e.g., P1_all.mat) as a reference for event extraction
-4. Modify the `persons` array to match your dataset
-5. Run the `USLEET.m` file:
+3. Select one person's file (e.g., P1_all.mat) as a reference for event extraction (line 7).
+4. Modify the `persons` array to match your dataset (line 102)
+5. Run the `main.m` file:
+   - When prompted in line 14, select the Curve Fitting Toolbox
+   - When prompted in line 43, select the Signal Processing Toolbox
+   - When prompted in line 52, select the Statistics and Machine Learning Toolbox
    - It will display the smooth vibrational signal of the reference person
    - Show 2 clusters formed using the signal
    - Prompt you to press Enter in the MATLAB command window
    - Process the entire dataset (may take 2-7 hours depending on dataset size and hardware)
-6. After completion:
-   - Right-click on the `person_feat` variable in the variable panel
-   - Save it as a MATLAB data file (e.g., DatasetName_VariableName.mat)
+
 
 ### Step 3: Event Concatenation
 1. Open the `EventConcatenate.m` file in MATLAB
 2. Load the path of the newly saved DatasetName_VariableName.mat file
-3. Modify the loop iteration value to match the number of persons in your dataset
+3. Modify the loop iteration value in line 17 to match the number of persons in your dataset 
 4. Run the `EventConcatenate.m` file
-5. After completion:
-   - Right-click on the `footstep_feat` variable in the variable panel
-   - Save it as a MATLAB data file (e.g., DatasetName_VariableName.mat)
-6. This final file is ready for use in machine learning and deep learning algorithms
+5. The output file is ready for use in machine learning and deep learning algorithms
 
 ## Usage
 
