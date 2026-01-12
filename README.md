@@ -154,7 +154,7 @@ output_path/
 └── ...
 ```
 
-## Citation
+## Citation [THIS AND THE LICENSE AFTERWARDS STILL NEED TO BE DONE]
 
 If you use this code in your research, please cite our paper:
 [Paper citation information to be added]
